@@ -4,15 +4,15 @@ getBuscarLivrosDaAPI()
 const elementoParaInserirLivros = document.getElementById('livros')
 
 async function getBuscarLivrosDaAPI() {
-    const res = await fetch(endpointDaAPI)
-    livros = await res.json()
-    console.table(livros)
-    exibirOsLivrosNaTela(livros)
+  const res = await fetch(endpointDaAPI)
+  livros = await res.json()
+  // console.table(livros)
+  exibirOsLivrosNaTela(livros)
 }
 
 function exibirOsLivrosNaTela(listaDeLivros) {
-    listaDeLivros.forEach(livro => {
-        elementoParaInserirLivros.innerHTML += `
+  listaDeLivros.forEach(livro => {
+    elementoParaInserirLivros.innerHTML += `
         <div class="livro">
         <img class="livro__imagens" src="${livro.imagem}"
           alt="${livro.alt}" />
@@ -26,5 +26,5 @@ function exibirOsLivrosNaTela(listaDeLivros) {
         </div>
       </div>
         `
-    })
+  })
 }
